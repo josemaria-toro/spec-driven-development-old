@@ -32,11 +32,25 @@ Cada cambio vive en `openspec/changes/<id-cambio>/` con los siguientes ficheros:
 
 ## Flujo
 
-1. **Proponer**: crear el cambio en `openspec/changes/<id-cambio>/` con `proposal.md`, las especificaciones delta y, si aplica, `design.md` y `tasks.md`.
-2. **Validar**: comprobar que el cambio es válido con la herramienta de OpenSpec antes de revisarlo.
-3. **Revisar**: el cambio se revisa en el mismo PR que el código, o en un PR previo si la especificación requiere aprobación por separado.
-4. **Implementar**: se siguen las tareas de `tasks.md` en orden. Cada tarea marcada como completada cumple sus escenarios.
-5. **Archivar**: al hacer merge, el cambio se archiva. Las especificaciones delta se incorporan a `openspec/specs/` y el cambio pasa a `openspec/changes/archive/` con fecha.
+Toda especificación sigue el flujo de OpenSpec en tres fases obligatorias y en este orden: **propose**, **apply** y **archive**. No se puede omitir ninguna fase ni cambiar su orden.
+
+1. **Propose** (`/opsx:propose`): crea el cambio en `openspec/changes/<id-cambio>/` con `proposal.md`, las especificaciones delta, `design.md` si aplica y `tasks.md`.
+   - Los artefactos se generan con el flujo de OpenSpec, no a mano.
+   - El cambio se valida con `openspec validate <id-cambio>` antes de pasar a la siguiente fase.
+   - No se escribe código de implementación hasta que la propuesta está completa y validada.
+2. **Apply** (`/opsx:apply`): implementa el cambio siguiendo las tareas de `tasks.md` en orden.
+   - Cada tarea se marca como completada solo cuando cumple sus escenarios y tiene sus pruebas.
+   - Si durante la implementación cambia el plan, los artefactos se actualizan con `/opsx:update` antes de continuar. El código y la especificación no pueden quedar en desacuerdo.
+3. **Archive** (`/opsx:archive`): con todas las tareas completadas, archiva el cambio. Las especificaciones delta se incorporan a `openspec/specs/` y el cambio pasa a `openspec/changes/archive/` con fecha.
+   - El archivado se hace en la rama de trabajo, antes del merge, para que el PR incluya la especificación, el código y el archivado.
+
+La fase de exploración (`/opsx:explore`) es opcional y se puede usar antes de `propose` para aclarar requisitos. No sustituye a ninguna de las tres fases obligatorias.
+
+### Revisión
+
+- El PR contiene el cambio completo: propuesta, implementación y archivado.
+- Si la especificación requiere aprobación antes de implementarla, se abre un PR previo solo con la fase `propose`. La implementación y el archivado van después en otro PR.
+- No se hace merge en `main` de un PR que implementa un cambio sin archivarlo, salvo en el caso anterior de PR previo de propuesta.
 
 ## Reglas
 
