@@ -37,7 +37,9 @@ Si una tecnología no aparece en la guía de tecnologías admitidas, no la uses.
 
 ## Primera ejecución en el repositorio
 
-Si el fichero `.git/onboarding-done` no existe, es la primera vez que se ejecuta Claude en este repositorio. En ese caso, sigue este procedimiento en orden antes de cualquier otra tarea. El fichero está dentro de `.git/`, así que no se versiona. Créalo solo cuando el procedimiento termine.
+Antes de cualquier otra tarea, cuenta los commits del repositorio en todas sus ramas, locales y remotas, con `git rev-list --count --all`. Si el repositorio no tiene commits (el comando devuelve `0`) o solo tiene el commit inicial (devuelve `1`), es la primera vez que se ejecuta Claude en este repositorio. En ese caso, sigue este procedimiento en orden antes de cualquier otra tarea.
+
+Si hay más de un commit, el onboarding ya se ha hecho y no se ejecuta.
 
 ### 1. Saludo
 
@@ -115,7 +117,6 @@ Muestra al usuario un resumen con:
 ### 11. Cierre
 
 - Muestra al usuario un resumen final: identidad configurada, estado de OpenSpec, ramas, scaffolding creado, tecnologías instaladas, comprobaciones ejecutadas y pendientes.
-- Cuando el procedimiento termine por completo, crea `.git/onboarding-done`.
 
 ## Antes de terminar una tarea
 
