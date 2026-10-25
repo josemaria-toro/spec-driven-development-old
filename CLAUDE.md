@@ -30,9 +30,9 @@ Si una tecnología no aparece en la guía de tecnologías admitidas, no la uses.
 
 ## Git
 
-- No hagas commits directos en `main`, `pre-release` ni `develop`.
-- Crea ramas de trabajo desde `develop` con el formato `<tipo>/<descripción-corta>` (`feature/`, `fix/`, `docs/`, `refactor/`, `chore/`). Los `hotfix/` salen de `main`.
-- Los cambios entran mediante PR, con merge por squash.
+- `main` es la única rama permanente. No hagas commits directos en `main`.
+- Crea ramas de trabajo desde `main` con el formato `<tipo>/<descripción-corta>` (`feature/`, `fix/`, `docs/`, `refactor/`, `chore/`).
+- Los cambios entran en `main` mediante PR, con merge por squash.
 - Los commits usan la identidad configurada en git. No cambies el autor de los commits.
 
 ## Primera ejecución en el repositorio
@@ -66,8 +66,9 @@ Saluda al usuario, explica en pocas líneas los pasos que vas a seguir y pregunt
 ### 5. Estructura de ramas
 
 - Lee [la guía de estrategia de ramas](.harness/development/git.md) y comprueba las ramas locales y remotas.
-- Si faltan `main`, `pre-release` o `develop`, indícalo al usuario y créalas. Parte de la rama que exista de `main`, o del HEAD actual si `main` no existe.
-- Cambia a `develop`. Es el punto de partida de todo el trabajo.
+- Si falta `main`, indícalo al usuario y créala desde el HEAD actual.
+- Si existen otras ramas permanentes de estrategias anteriores (por ejemplo, `develop` o `pre-release`), indícalo al usuario. No las elimines sin su confirmación.
+- Cambia a `main`. Es el punto de partida de todo el trabajo.
 - Si hay cambios sin commitear que impedirían el cambio de rama, para y pregunta al usuario qué hacer con ellos. No los descartes ni los incluyas en un commit sin confirmación.
 - No hagas push de ninguna rama sin confirmación del usuario. Las reglas de protección de ramas en el remoto no se pueden configurar desde el repositorio local. Indícalas en el resumen como pendientes si no están configuradas.
 
@@ -83,7 +84,7 @@ Para todos los proyectos, pide las tecnologías al usuario, aunque el scaffoldin
 
 ### 7. Scaffolding
 
-- Trabaja en una rama `chore/scaffolding-inicial` creada desde `develop`. No hagas commits directos en `develop`.
+- Trabaja en una rama `chore/scaffolding-inicial` creada desde `main`. No hagas commits directos en `main`.
 - Crea la estructura de cada proyecto siguiendo sus guías. Incluye la configuración de herramientas (formateo, linter, tipos, pruebas con cobertura mínima del 80 %, pre-commit), el `README.md` según [la guía de documentación de proyectos](.harness/documentation/projects.md) y un `.gitignore` acorde a la tecnología.
 - Incluye al menos una prueba de humo por proyecto, para que las comprobaciones se puedan ejecutar desde el primer momento.
 - No crees código de negocio. El scaffolding solo contiene la estructura, la configuración y los ejemplos mínimos necesarios.
