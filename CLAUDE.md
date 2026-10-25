@@ -24,7 +24,7 @@ Si una tecnología no aparece en la guía de tecnologías admitidas, no la uses.
 - **Serialización JSON**: las propiedades expuestas en JSON van en `camelCase`, nunca en `snake_case`. Los atributos internos de Python siguen en `snake_case`; la conversión se hace solo en la capa de serialización (por ejemplo, con alias de `pydantic`).
 - **Pruebas**: el código nuevo o modificado necesita pruebas unitarias, de integración y end-to-end según corresponda. La cobertura del proyecto debe ser al menos del 80 %.
 - **Arquitectura de backend**: los proyectos de backend siguen DDD y aplican la arquitectura hexagonal con Clean Architecture, con las capas y la regla de dependencias de `.harness/architecture/python.md`. Al crear una entidad del dominio, crea en el mismo cambio su contrato de repositorio, su modelo de persistencia, su repositorio de SQLAlchemy y su mapper, con sus pruebas.
-- **Especificaciones**: las funcionalidades nuevas y los cambios de comportamiento se especifican con OpenSpec antes de implementarlos. Las especificaciones viven en `openspec/` de cada proyecto. Al implementar un cambio, sigue sus `tasks.md` y comprueba que cada escenario tiene su prueba.
+- **Especificaciones**: las funcionalidades nuevas y los cambios de comportamiento se especifican con OpenSpec antes de implementarlos. Las especificaciones viven en `openspec/` de cada proyecto. Cada especificación sigue obligatoriamente el flujo de OpenSpec, en orden y sin omitir fases: `propose` (`/opsx:propose`), `apply` (`/opsx:apply`) y `archive` (`/opsx:archive`), como indica `.harness/development/specifications.md`. Al implementar un cambio, sigue sus `tasks.md` y comprueba que cada escenario tiene su prueba. Archiva el cambio en la rama de trabajo antes del merge.
 - **Documentación**: los cambios que afecten a un proyecto deben actualizar su documentación en el mismo PR.
 - **Secretos**: nunca escribas contraseñas, claves, tokens ni otra información sensible en el código, en la documentación ni en los ejemplos.
 
@@ -120,6 +120,6 @@ Muestra al usuario un resumen con:
 ## Antes de terminar una tarea
 
 1. Ejecuta las comprobaciones del proyecto: formateo, linter, tipos, pruebas y cobertura.
-2. Revisa los guardarraíles aplicables y confirma que el cambio los cumple. Si hay un cambio de OpenSpec asociado, confirma que está validado y que sus tareas y escenarios están cubiertos.
+2. Revisa los guardarraíles aplicables y confirma que el cambio los cumple. Si hay un cambio de OpenSpec asociado, confirma que ha pasado por `propose` y `apply`, que está validado, que sus tareas y escenarios están cubiertos y que está archivado con `archive`.
 3. Actualiza la documentación afectada.
 4. Resume al usuario qué has cambiado y qué comprobaciones has ejecutado. Si alguna no se ha podido ejecutar, dilo.
