@@ -1,0 +1,99 @@
+name: Error
+description: Notificación de un error o comportamiento incorrecto en la plataforma
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe el error con el mayor detalle posible. Los campos de cierre se rellenan cuando el ticket se cierra.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción del error
+      description: Qué ocurre, qué se esperaba que ocurriera y cuál es el impacto.
+      placeholder: Describe el comportamiento observado y el esperado.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Entorno
+      description: Entorno en el que se ha producido el error.
+      options:
+        - Development
+        - Pre-Release
+        - Production
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      description: Secuencia exacta de acciones que provoca el error.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Criterios de aceptación
+      description: Lista verificable de condiciones que deben cumplirse para dar el error por resuelto.
+      placeholder: |
+        - [ ] Dado ..., cuando ..., entonces ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Estado
+      description: Estado actual del ticket.
+      options:
+        - Todo
+        - In Evaluation
+        - Accepted
+        - Rejected
+        - In Progress
+        - Blocked
+        - Ready
+        - Done
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: created_at
+    attributes:
+      label: Fecha de creación
+      description: Formato YYYY-MM-DD.
+      placeholder: "2026-10-24"
+    validations:
+      required: true
+
+  - type: input
+    id: closed_at
+    attributes:
+      label: Fecha de cierre
+      description: Formato YYYY-MM-DD. Rellenar solo al cerrar el ticket.
+      placeholder: "2026-10-31"
+
+  - type: textarea
+    id: close_reason
+    attributes:
+      label: Motivo del cierre
+      description: Explicación breve de por qué se cierra el ticket. Rellenar solo al cerrar el ticket.
+
+  - type: input
+    id: closed_by
+    attributes:
+      label: Cerrado por
+      description: Persona que cierra el ticket. Rellenar solo al cerrar el ticket.
