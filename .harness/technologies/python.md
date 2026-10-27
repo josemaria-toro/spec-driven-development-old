@@ -32,6 +32,7 @@ Cualquier tecnología que no aparezca en esta lista requiere aprobación previa 
 | Tecnología | Uso |
 |---|---|
 | `pytest` | Framework de pruebas unitarias y de integración. |
+| `pytest-asyncio` | Tecnología por defecto para las pruebas asíncronas. |
 | `pytest-cov` | Medición de cobertura de código. |
 
 ## Seguridad
@@ -48,8 +49,16 @@ Cualquier tecnología que no aparezca en esta lista requiere aprobación previa 
 | Tecnología | Uso |
 |---|---|
 | `pydantic` | Validación de datos y serialización JSON. |
+| `PostgreSQL` | Motor de base de datos por defecto. |
 | `SQLAlchemy` | Acceso a bases de datos relacionales, con consultas parametrizadas. |
 | `Alembic` | Migraciones de esquema de bases de datos. |
+
+## Mensajería
+
+| Tecnología | Uso |
+|---|---|
+| `RabbitMQ` | Broker de mensajería por defecto. |
+| `pika` | Librería por defecto para las comunicaciones con RabbitMQ. |
 
 ## Aplicaciones web y APIs
 
