@@ -31,7 +31,8 @@ Guía para el desarrollo de aplicaciones basadas en Python.
 - Evitar `from módulo import *`.
 - Las importaciones de tipos del mismo proyecto se hacen con ruta relativa (`from .user import User`, `from ..domain.user import User`), nunca con la ruta absoluta del paquete. Las importaciones de bibliotecas externas y de la biblioteca estándar siguen siendo absolutas.
 - No usar valores mutables como argumentos por defecto.
-- Los métodos y propiedades de una clase se ordenan alfabéticamente. Primero los públicos y después el resto.
+- Los miembros de una clase se ordenan por tipo: primero los constructores, después las propiedades y por último los métodos.
+- Dentro de cada grupo, los miembros se ordenan alfabéticamente: primero los públicos y después los privados.
 - Cada fichero contiene un único tipo (clase, enumeración, `Protocol`, alias de tipo o similar). El nombre del fichero en `snake_case` corresponde al del tipo que define.
 
 ## Tipado
