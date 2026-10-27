@@ -50,6 +50,7 @@ Cualquier tecnología que no aparezca en esta lista requiere aprobación previa 
 |---|---|
 | `pydantic` | Validación de datos y serialización JSON. |
 | `PostgreSQL` | Motor de base de datos por defecto. |
+| `asyncpg` | Driver por defecto para PostgreSQL. |
 | `SQLAlchemy` | Acceso a bases de datos relacionales, con consultas parametrizadas. |
 | `Alembic` | Migraciones de esquema de bases de datos. |
 
