@@ -30,6 +30,7 @@ Guía para el desarrollo de aplicaciones basadas en React.
 - Los componentes son funciones. No se usan componentes de clase.
 - Los nombres de hooks comienzan por `use`.
 - Los métodos y propiedades de las clases y de los objetos se ordenan alfabéticamente. Primero los públicos y después el resto.
+- Cada fichero contiene un único tipo (componente, clase, enumeración, `interface` o `type`). El nombre del fichero corresponde al del tipo que define. Las `props` de un componente se consideran parte de este y pueden declararse en su mismo fichero.
 
 ## Componentes y estado
 
