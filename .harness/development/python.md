@@ -29,8 +29,10 @@ Guía para el desarrollo de aplicaciones basadas en Python.
 - Los nombres de módulos, funciones y variables usan `snake_case`. Las clases usan `PascalCase`. Las constantes usan `UPPER_SNAKE_CASE`.
 - Las funciones públicas deben tener anotaciones de tipo completas.
 - Evitar `from módulo import *`.
+- Las importaciones de tipos del mismo proyecto se hacen con ruta relativa (`from .user import User`, `from ..domain.user import User`), nunca con la ruta absoluta del paquete. Las importaciones de bibliotecas externas y de la biblioteca estándar siguen siendo absolutas.
 - No usar valores mutables como argumentos por defecto.
 - Los métodos y propiedades de una clase se ordenan alfabéticamente. Primero los públicos y después el resto.
+- Cada fichero contiene un único tipo (clase, enumeración, `Protocol`, alias de tipo o similar). El nombre del fichero en `snake_case` corresponde al del tipo que define.
 
 ## Tipado
 
@@ -64,6 +66,7 @@ Guía para el desarrollo de aplicaciones basadas en Python.
 
 - Configurar `pre-commit` con `black`, `ruff` y `mypy` para ejecutar las comprobaciones antes de cada commit.
 - La integración continua debe ejecutar `black --check`, `ruff`, `mypy` y `pytest`. Un fallo en cualquiera bloquea el merge.
+- La configuración de `ruff` no puede contradecir las reglas de esta guía. En concreto, la regla `TID252` (importaciones relativas) no se activa o se ignora explícitamente en `[tool.ruff.lint]`, ya que las importaciones del mismo proyecto son relativas.
 
 ## Dependencias
 
