@@ -29,7 +29,8 @@ Guía para el desarrollo de aplicaciones basadas en React.
 - Los componentes usan `PascalCase`. Hooks, funciones y variables usan `camelCase`. Las constantes globales usan `UPPER_SNAKE_CASE`.
 - Los componentes son funciones. No se usan componentes de clase.
 - Los nombres de hooks comienzan por `use`.
-- Los métodos y propiedades de las clases y de los objetos se ordenan alfabéticamente. Primero los públicos y después el resto.
+- Los miembros de las clases y de los objetos se ordenan por tipo: primero los constructores, después las propiedades y por último los métodos.
+- Dentro de cada grupo, los miembros se ordenan alfabéticamente: primero los públicos y después los privados.
 - Cada fichero contiene un único tipo (componente, clase, enumeración, `interface` o `type`). El nombre del fichero corresponde al del tipo que define. Las `props` de un componente se consideran parte de este y pueden declararse en su mismo fichero.
 
 ## Componentes y estado
