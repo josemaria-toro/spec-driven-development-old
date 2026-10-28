@@ -31,7 +31,7 @@ feature/fix/docs/refactor/chore → main
 ## Pull Requests
 
 - El título del PR se escribe en inglés y se corresponde con el título de la especificación de OpenSpec que implementa el cambio.
-- Cada PR debe tener una descripción clara del cambio y su motivo.
+- Cada PR debe tener una descripción clara del cambio y su motivo, escrita en inglés.
 - Antes de hacer merge, el PR debe tener una revisión aprobada y los checks en verde.
 - Todos los merges en `main` se hacen por "squash" para mantener un historial limpio.
 
