@@ -53,6 +53,8 @@ Guía para el desarrollo de aplicaciones basadas en React.
 - Las pruebas se centran en el comportamiento visible para el usuario, no en detalles internos de implementación.
 - Las pruebas deben ser deterministas: no dependen del orden de ejecución, del reloj del sistema ni de la red, salvo en las pruebas end-to-end.
 - Cobertura mínima obligatoria: 80 % de todo el código del proyecto (ver [guardarraíles](../guardrails/react.md)).
+- Las pruebas se ejecutan de forma efímera en contenedores de Docker: cada ejecución crea sus contenedores (base de datos, broker y demás servicios) y los elimina al terminar, sin dejar estado entre ejecuciones.
+- Si Docker no está instalado en el sistema, se recomienda instalarlo antes de ejecutar las pruebas, siguiendo la [documentación oficial](https://docs.docker.com/engine/install/). La instalación puede requerir permisos elevados.
 
 ## Documentación en el código
 
