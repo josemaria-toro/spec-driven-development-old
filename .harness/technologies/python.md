@@ -34,6 +34,7 @@ Cualquier tecnología que no aparezca en esta lista requiere aprobación previa 
 | `pytest` | Framework de pruebas unitarias y de integración. |
 | `pytest-asyncio` | Tecnología por defecto para las pruebas asíncronas. |
 | `pytest-cov` | Medición de cobertura de código. |
+| `Docker` | Ejecución efímera de las pruebas y de los servicios que necesitan (base de datos, broker). Es una herramienta de desarrollo, no una dependencia de ejecución del proyecto. |
 
 ## Seguridad
 
