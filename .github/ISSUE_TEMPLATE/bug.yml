@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Describe el error con el mayor detalle posible. Los campos de cierre se rellenan cuando el ticket se cierra.
+        Describe el error con el mayor detalle posible.
 
   - type: textarea
     id: description
@@ -51,49 +51,3 @@ body:
         - [ ] ...
     validations:
       required: true
-
-  - type: dropdown
-    id: status
-    attributes:
-      label: Estado
-      description: Estado actual del ticket.
-      options:
-        - Todo
-        - In Evaluation
-        - Accepted
-        - Rejected
-        - In Progress
-        - Blocked
-        - Ready
-        - Done
-      default: 0
-    validations:
-      required: true
-
-  - type: input
-    id: created_at
-    attributes:
-      label: Fecha de creación
-      description: Formato YYYY-MM-DD.
-      placeholder: "2026-10-24"
-    validations:
-      required: true
-
-  - type: input
-    id: closed_at
-    attributes:
-      label: Fecha de cierre
-      description: Formato YYYY-MM-DD. Rellenar solo al cerrar el ticket.
-      placeholder: "2026-10-31"
-
-  - type: textarea
-    id: close_reason
-    attributes:
-      label: Motivo del cierre
-      description: Explicación breve de por qué se cierra el ticket. Rellenar solo al cerrar el ticket.
-
-  - type: input
-    id: closed_by
-    attributes:
-      label: Cerrado por
-      description: Persona que cierra el ticket. Rellenar solo al cerrar el ticket.
