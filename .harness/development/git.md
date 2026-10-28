@@ -21,15 +21,16 @@ feature/fix/docs/refactor/chore → main
 ## Ramas de trabajo
 
 - Cada tarea se desarrolla en una rama corta creada a partir de `main`.
-- Nombre de las ramas: `<tipo>/<descripción-corta>`, en minúsculas y separadas por guiones.
+- Nombre de las ramas: `<tipo>/<descripción-corta>`, en inglés, en minúsculas y separadas por guiones.
   - Tipos: `feature/`, `fix/`, `docs/`, `refactor/`, `chore/`.
-  - Ejemplos: `feature/login-oauth`, `fix/crash-al-guardar`.
+  - Ejemplos: `feature/oauth-login`, `fix/crash-on-save`.
 - Las correcciones urgentes siguen el mismo flujo con una rama `fix/`.
 - Las ramas deben ser cortas: se integran en `main` lo antes posible y se eliminan tras el merge.
 - Antes de abrir el PR, la rama se actualiza con los últimos cambios de `main`.
 
 ## Pull Requests
 
+- El título del PR se escribe en inglés y se corresponde con el título de la especificación de OpenSpec que implementa el cambio.
 - Cada PR debe tener una descripción clara del cambio y su motivo.
 - Antes de hacer merge, el PR debe tener una revisión aprobada y los checks en verde.
 - Todos los merges en `main` se hacen por "squash" para mantener un historial limpio.
