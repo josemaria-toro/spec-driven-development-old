@@ -101,6 +101,14 @@ Reglas de la estructura:
   - `api/schemas/`: modelos de entrada y salida de la API. Se exponen en `camelCase`.
   - `cli/`: comandos de línea de comandos, si el proyecto los necesita.
 
+## Rutas de la API
+
+- Todos los endpoints de la API siguen el formato `/api/v<num_version>/<path>`, donde `<num_version>` es el número entero de la versión mayor de la API. Ejemplo: `/api/v1/projects`.
+- La versión forma parte de la ruta, nunca de una cabecera ni de un parámetro de consulta.
+- Cada versión se agrupa en su propio router dentro de `interfaces/api/routers/`, con el prefijo `/api/v<num_version>`.
+- Un cambio incompatible en el contrato de un endpoint exige publicar una nueva versión. Los cambios compatibles se mantienen en la versión vigente.
+- Los endpoints de salud o de métricas, si existen, siguen el mismo formato.
+
 ## Reglas de nombrado
 
 - Las entidades de dominio no llevan sufijo: `Project`.
