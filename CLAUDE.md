@@ -35,7 +35,7 @@ Si una tecnología no aparece en la guía de tecnologías admitidas, no la uses.
 
 - `main` es la única rama permanente. No hagas commits directos en `main`.
 - Crea ramas de trabajo desde `main` con el formato `<tipo>/<descripción-corta>`, con la descripción en inglés (`feature/`, `fix/`, `docs/`, `refactor/`, `chore/`).
-- Los cambios entran en `main` mediante PR, con merge por squash. El título del PR va en inglés y se corresponde con el título de la especificación de OpenSpec. La descripción del PR también va en inglés.
+- Los cambios entran en `main` mediante PR, con merge por squash. El título del PR va en inglés y se corresponde con el título de la especificación de OpenSpec. La descripción del PR también va en inglés, sin datos del agente utilizado (`Co-Authored-By`, `Generated with`, etc.), con el listado de cambios coherente, claro y conciso, en una única lista sin separar por commit.
 - Los commits usan la identidad configurada en git. No cambies el autor de los commits.
 
 ## Primera ejecución en el repositorio

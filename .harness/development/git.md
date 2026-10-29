@@ -32,6 +32,8 @@ feature/fix/docs/refactor/chore → main
 
 - El título del PR se escribe en inglés y se corresponde con el título de la especificación de OpenSpec que implementa el cambio.
 - Cada PR debe tener una descripción clara del cambio y su motivo, escrita en inglés.
+- La descripción del PR no incluye datos del agente de IA utilizado: ni `Co-Authored-By`, ni `Generated with`, ni enlaces o menciones a herramientas o modelos.
+- El listado de cambios de la descripción es coherente, claro y conciso. Se redacta como una única lista de viñetas sobre el resultado global del PR, sin separarla por commit.
 - Antes de hacer merge, el PR debe tener una revisión aprobada y los checks en verde.
 - Todos los merges en `main` se hacen por "squash" para mantener un historial limpio.
 
