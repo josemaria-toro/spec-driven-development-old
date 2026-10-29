@@ -7,4 +7,5 @@
 # Especificaciones y guías obligatorias.
 /openspec/              @josemaria-toro
 /.harness/              @josemaria-toro
+/AGENTS.md              @josemaria-toro
 /CLAUDE.md              @josemaria-toro

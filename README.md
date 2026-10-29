@@ -21,7 +21,8 @@ Repositorio plantilla para crear aplicaciones utilizando agentes de inteligencia
 │   ├── licenses/         # Licencias por lenguaje
 │   ├── security/         # Seguridad por lenguaje
 │   └── technologies/     # Tecnologías admitidas por lenguaje
-├── CLAUDE.md         # Instrucciones para Claude Code
+├── AGENTS.md         # Instrucciones para agentes de IA
+├── CLAUDE.md         # Importa AGENTS.md para Claude Code
 ├── LICENSE
 ├── openspec/         # Especificaciones: specs/ (vigentes) y changes/ (en curso y archivados)
 └── README.md

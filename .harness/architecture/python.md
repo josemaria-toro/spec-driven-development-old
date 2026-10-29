@@ -85,6 +85,7 @@ Reglas de la estructura:
   - `value_objects/`: objetos inmutables definidos por sus valores. Ejemplo: una versión SemVer.
   - `ports/`: puertos de salida, es decir, interfaces (`typing.Protocol`) que el dominio necesita del exterior.
     - `ports/repositories/`: cómo se persisten las entidades. Ejemplo: `project_repository.py` con `ProjectRepository`.
+      - Al crear una entidad del dominio se crean en el mismo cambio su contrato de repositorio, su modelo de persistencia, su repositorio de SQLAlchemy y su mapper, con sus pruebas.
     - `ports/gateways/`: acceso a sistemas externos. Ejemplo: `notification_gateway.py` con `NotificationGateway`.
   - `services/`: lógica de dominio que no pertenece a una sola entidad y no necesita un puerto.
   - `exceptions.py`: excepciones propias del dominio, como `ProjectNotFoundError`.
