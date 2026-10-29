@@ -1,28 +1,68 @@
 schema: spec-driven
 
 context: |
-  Language: Spanish
-  All artifacts must be written in Spanish.
-  Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+  Repositorio Spec Driven Development: plantilla para crear aplicaciones con agentes de IA
+  siguiendo el estándar Spec Driven Development. Las especificaciones no dependen de ningún
+  agente concreto: la fuente de verdad son las guías de `.harness/`.
 
-# Per-artifact rules (optional)
-# Add custom rules for specific artifacts.
-# Example:
-#   rules:
-#     proposal:
-#       - Keep proposals under 500 words
-#       - Always state what is out of scope
-#     tasks:
-#       - Break tasks into chunks of max 2 hours
+  Idioma:
+  - Todos los artefactos (proposal, specs, design, tasks) se escriben en español.
+  - Los encabezados estructurales de OpenSpec y las palabras clave SHALL/MUST se mantienen en inglés.
+  - Los identificadores de cambio y de capacidad van en minúsculas, separados por guiones y en inglés.
+  - El código fuente (módulos, clases, métodos, variables, constantes) va en inglés; los docstrings,
+    comentarios y documentación en español; los mensajes de log y excepciones en inglés.
 
-# Per-operation guidance (optional)
-# Add advisory guidance for how apply and archive work should be conducted.
-# This is separate from artifact rules above.
-# Example:
-#   operations:
-#     apply:
-#       guidance:
-#         - Keep test summaries concise
-#     archive:
-#       guidance:
-#         - Summarize the archive outcome before finishing
+  Guías de referencia (leerlas antes de redactar o implementar):
+  - Especificaciones: `.harness/development/specifications.md`.
+  - Ramas, commits y PR: `.harness/development/git.md`.
+  - Despliegues: `.harness/development/deployment.md`.
+  - Documentación: `.harness/documentation/projects.md`.
+  - Python: `.harness/{architecture,development,security,technologies,guardrails,licenses}/python.md`.
+  - React: `.harness/{architecture,development,security,technologies,guardrails,licenses}/react.md`.
+
+  Reglas transversales:
+  - Backend: DDD con arquitectura hexagonal y Clean Architecture. Al crear una entidad del dominio se
+    crean en el mismo cambio su contrato de repositorio, modelo de persistencia, repositorio de
+    SQLAlchemy y mapper, con sus pruebas.
+  - Frontend: organizado por funcionalidad.
+  - API: endpoints con formato `/api/v<num_version>/<path>`; propiedades JSON en `camelCase`
+    (los atributos internos de Python siguen en `snake_case`).
+  - Solo se usan tecnologías admitidas en `.harness/technologies/`; cualquier otra requiere aprobación
+    del usuario.
+  - Pruebas unitarias, de integración y end-to-end según corresponda, con cobertura mínima del 80 %,
+    ejecutadas de forma efímera en Docker.
+  - Los guardarraíles de `.harness/guardrails/` deben cumplirse; si no, el merge queda bloqueado.
+  - Nunca se escriben secretos (contraseñas, claves, tokens) en código, documentación ni ejemplos.
+  - El PR se titula en inglés con el título de la especificación y referencia el identificador del cambio.
+    Su descripción va en inglés, sin datos del agente o modelo utilizado.
+
+rules:
+  proposal:
+    - Indicar por qué se hace el cambio, su alcance y qué queda fuera de alcance.
+    - Identificar los proyectos afectados (backend, frontend u otros) y las guías de `.harness/` que aplican.
+    - Usar un identificador de cambio en minúsculas, con guiones y en inglés.
+  specs:
+    - Cada requisito usa SHALL/MUST y tiene al menos un escenario verificable por una prueba.
+    - Las propiedades JSON de los contratos se expresan en `camelCase` y las rutas como `/api/v<num_version>/<path>`.
+    - No editar `openspec/specs/` directamente; solo se modifica mediante un cambio archivado.
+  design:
+    - Seguir la arquitectura de `.harness/architecture/` (hexagonal y Clean Architecture en backend; por funcionalidad en frontend).
+    - Usar únicamente tecnologías admitidas en `.harness/technologies/`; señalar cualquier excepción para su aprobación.
+    - Incluir las decisiones técnicas relevantes, que se registran como ADR en `docs/adr/`.
+  tasks:
+    - Incluir, para cada escenario de las especificaciones, la tarea de su prueba (unitaria, de integración o end-to-end).
+    - Incluir las tareas de documentación afectada (`README.md`, `docs/`, `CHANGELOG.md`) en el mismo cambio.
+    - Incluir una tarea final para ejecutar formateo, linter, tipos, pruebas y cobertura, y revisar los guardarraíles.
+
+operations:
+  apply:
+    guidance:
+      - Implementar las tareas de `tasks.md` en orden y marcarlas solo cuando cumplan sus escenarios y tengan pruebas.
+      - Si el plan cambia durante la implementación, actualizar los artefactos antes de continuar; código y especificación no pueden quedar en desacuerdo.
+      - Trabajar en una rama `<tipo>/<descripción-corta>` desde `main`, sin commits directos en `main`.
+      - Ejecutar las comprobaciones del proyecto y revisar los guardarraíles aplicables antes de dar el cambio por listo.
+  archive:
+    guidance:
+      - Archivar el cambio en la rama de trabajo, antes del merge, para que el PR incluya especificación, código y archivado.
+      - Confirmar que las tareas y escenarios están cubiertos y que la documentación está actualizada.
+      - Resumir el resultado del archivado antes de terminar.
