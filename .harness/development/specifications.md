@@ -8,6 +8,13 @@ Guía para el desarrollo de especificaciones con OpenSpec. Se aplica a todos los
 - Cada proyecto mantiene su carpeta `openspec/` en la raíz del repositorio, versionada junto con el código.
 - La versión de OpenSpec se fija en el proyecto. Los comandos se ejecutan con esa versión.
 
+## Agentes y comandos
+
+- El flujo no depende de un agente concreto. Los comandos `/opsx:*` son atajos de los agentes que los soportan; el equivalente con la CLI es `openspec` (`openspec validate`, `openspec archive`, `openspec status`, `openspec instructions`).
+- Los ficheros de instrucciones por agente (por ejemplo, `.claude/`) los genera OpenSpec y no se editan a mano. Se regeneran con `openspec update`.
+- Para añadir otro agente, ejecuta `openspec init --tools <agente>` (por ejemplo, `agents`, `codex` o `cursor`) y versiona el resultado.
+- Las instrucciones generales para agentes están en `AGENTS.md`.
+
 ## Estructura
 
 ```
@@ -45,6 +52,10 @@ Toda especificación sigue el flujo de OpenSpec en tres fases obligatorias y en 
    - El archivado se hace en la rama de trabajo, antes del merge, para que el PR incluya la especificación, el código y el archivado.
 
 La fase de exploración (`/opsx:explore`) es opcional y se puede usar antes de `propose` para aclarar requisitos. No sustituye a ninguna de las tres fases obligatorias.
+
+### Validación en integración continua
+
+Este repositorio es una plantilla y no define integración continua. Los proyectos creados a partir de ella la incluyen y deben ejecutar `openspec validate --all --strict`, como exigen los guardarraíles de su lenguaje.
 
 ### Revisión
 

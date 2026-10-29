@@ -39,7 +39,8 @@ feature/fix/docs/refactor/chore → main
 
 ## Commits
 
-- Mensajes en imperativo y en una sola línea descriptiva (por ejemplo, `Añade validación del formulario de registro`).
+- Los mensajes de commit se escriben en inglés, en imperativo y en una sola línea descriptiva (por ejemplo, `Add validation to the sign-up form`).
+- Ramas, commits, títulos y descripciones de PR van en inglés.
 - Cada commit debe dejar el proyecto en un estado que compile y pase las pruebas.
 
 ## Versiones
