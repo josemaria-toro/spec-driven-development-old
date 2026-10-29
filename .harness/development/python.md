@@ -29,7 +29,8 @@ Guía para el desarrollo de aplicaciones basadas en Python.
 - Los nombres de módulos, funciones y variables usan `snake_case`. Las clases usan `PascalCase`. Las constantes usan `UPPER_SNAKE_CASE`.
 - Las funciones públicas deben tener anotaciones de tipo completas.
 - Evitar `from módulo import *`.
-- Las importaciones de tipos del mismo proyecto se hacen con ruta relativa (`from .user import User`, `from ..domain.user import User`), nunca con la ruta absoluta del paquete. Las importaciones de bibliotecas externas y de la biblioteca estándar siguen siendo absolutas.
+- Las importaciones de referencias internas del proyecto se hacen con ruta absoluta desde el paquete raíz (`from app.domain.user import User`), nunca con rutas relativas (`from .user import User`, `from ..domain.user import User`). Las importaciones de bibliotecas externas y de la biblioteca estándar también son absolutas.
+- Las importaciones se ordenan cada vez que se añada o elimine alguna, en tres grupos separados por una línea en blanco: biblioteca estándar, bibliotecas externas y referencias internas del proyecto. Dentro de cada grupo se ordenan alfabéticamente. La ordenación se comprueba con la regla `I` (isort) de `ruff`.
 - No usar valores mutables como argumentos por defecto.
 - Los miembros de una clase se ordenan por tipo: primero los constructores, después las propiedades y por último los métodos.
 - Dentro de cada grupo, los miembros se ordenan alfabéticamente: primero los públicos y después los privados.
@@ -69,7 +70,7 @@ Guía para el desarrollo de aplicaciones basadas en Python.
 
 - Configurar `pre-commit` con `black`, `ruff` y `mypy` para ejecutar las comprobaciones antes de cada commit.
 - La integración continua debe ejecutar `black --check`, `ruff`, `mypy` y `pytest`. Un fallo en cualquiera bloquea el merge.
-- La configuración de `ruff` no puede contradecir las reglas de esta guía. En concreto, la regla `TID252` (importaciones relativas) no se activa o se ignora explícitamente en `[tool.ruff.lint]`, ya que las importaciones del mismo proyecto son relativas.
+- La configuración de `ruff` no puede contradecir las reglas de esta guía. En concreto, la regla `TID252` se activa con `ban-relative-imports = "all"` para prohibir todas las importaciones relativas, y la regla `I` (ordenación de importaciones) está activa en `[tool.ruff.lint]`, con el paquete raíz del proyecto declarado como interno (`known-first-party`).
 
 ## Dependencias
 
