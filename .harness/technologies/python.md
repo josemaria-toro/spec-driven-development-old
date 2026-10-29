@@ -16,7 +16,7 @@ Cualquier tecnología que no aparezca en esta lista requiere aprobación previa 
 
 | Tecnología | Uso |
 |---|---|
-| `OpenSpec` | Escritura y gestión de especificaciones de cambios, según [la guía de especificaciones](../development/specifications.md). Es una herramienta de desarrollo y requiere Node.js 22 LTS. No es una dependencia de ejecución del proyecto. |
+| `OpenSpec` | Escritura y gestión de especificaciones de cambios, según [la guía de especificaciones](../development/specifications.md). Es una herramienta de desarrollo y requiere Node.js 20 o superior. No es una dependencia de ejecución del proyecto. |
 
 ## Calidad de código
 
@@ -42,6 +42,8 @@ Cualquier tecnología que no aparezca en esta lista requiere aprobación previa 
 |---|---|
 | `pip-audit` | Detección de vulnerabilidades en dependencias. |
 | `bandit` | Análisis estático de seguridad. |
+| `gitleaks` | Detección de secretos en el código y en el historial de Git. |
+| `pip-licenses` | Comprobación de las licencias de las dependencias. |
 | `argon2-cffi` | Hash de contraseñas con Argon2. |
 | `cryptography` | Cifrado y descifrado simétrico (AES-GCM, Fernet) y criptografía asimétrica. |
 

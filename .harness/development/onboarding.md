@@ -28,7 +28,7 @@ Saluda al usuario, explica en pocas líneas los pasos que vas a seguir y pregunt
 ## 4. OpenSpec
 
 - Comprueba si OpenSpec está instalado (`openspec --version`) y si el proyecto está inicializado (existe la carpeta `openspec/`).
-- Si no está instalado, instálalo. Requiere Node.js 22 LTS. Si Node.js no está disponible, indícalo y pide al usuario que lo instale o autoriza su instalación (ver "Permisos y credenciales").
+- Si no está instalado, instálalo. Requiere Node.js 20 o superior. Si Node.js no está disponible, indícalo y pide al usuario que lo instale o autoriza su instalación (ver "Permisos y credenciales").
 - Si no está inicializado, inicialízalo siguiendo la documentación oficial de la versión instalada y [la guía de especificaciones](specifications.md).
 - Fija la versión de OpenSpec en el proyecto, como indica esa guía.
 

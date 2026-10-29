@@ -20,6 +20,12 @@ Guía que incluye los guardarraíles definidos para aplicaciones basadas en Reac
 - La presencia de este tipo de información en el código bloquea el merge.
 - Este requisito aplica a cualquier merge en `main`.
 
+## Detección automática de secretos
+
+- La integración continua ejecuta `gitleaks` sobre el historial del PR y `pre-commit` lo ejecuta antes de cada commit.
+- Un hallazgo bloquea el merge. Si es un falso positivo, se justifica en la configuración de `gitleaks`, no se ignora el fichero.
+- Este requisito aplica a cualquier merge en `main`.
+
 ## Vulnerabilidades en librerías
 
 - La detección de una vulnerabilidad de severidad alta o crítica en una librería utilizada por el proyecto bloquea el merge.
@@ -28,7 +34,14 @@ Guía que incluye los guardarraíles definidos para aplicaciones basadas en Reac
 ## Tecnologías no aprobadas
 
 - Solo se pueden usar las tecnologías incluidas en la guía de tecnologías admitidas.
+- La integración continua compara las dependencias de `package.json` con la guía de tecnologías admitidas mediante un script del proyecto (`scripts/`).
 - El uso de una tecnología no aprobada bloquea el merge.
+- Este requisito aplica a cualquier merge en `main`.
+
+## Licencias de dependencias
+
+- Todas las dependencias, directas y transitivas, deben tener una licencia compatible con GPL v3. La integración continua lo comprueba con `license-checker-rseidelsohn`.
+- Una dependencia con licencia incompatible o desconocida bloquea el merge.
 - Este requisito aplica a cualquier merge en `main`.
 
 ## Licencia
@@ -47,5 +60,12 @@ Guía que incluye los guardarraíles definidos para aplicaciones basadas en Reac
 ## Documentación actualizada
 
 - La documentación del proyecto debe estar actualizada en el mismo PR que el cambio de código que la afecta.
+- La plantilla de PR (`.github/pull_request_template.md`) incluye una lista de comprobación de documentación que el autor debe completar y el revisor verificar.
 - Si la documentación no queda actualizada, se bloquea el merge.
+- Este requisito aplica a cualquier merge en `main`.
+
+## Especificaciones de OpenSpec
+
+- La integración continua ejecuta `openspec validate --all --strict`. Un fallo bloquea el merge.
+- Un PR que implementa un cambio no puede llegar a `main` con ese cambio sin archivar en `openspec/changes/` (salvo el PR previo solo de propuesta, según [la guía de especificaciones](../development/specifications.md)).
 - Este requisito aplica a cualquier merge en `main`.

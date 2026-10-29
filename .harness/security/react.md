@@ -8,6 +8,7 @@ Guía de seguridad para aplicaciones basadas en React.
 - Todo lo que se incluye en el bundle del cliente es público. Las variables de entorno expuestas al frontend (por ejemplo, las prefijadas con `VITE_` o `NEXT_PUBLIC_`) no pueden contener secretos.
 - Los secretos que necesita la aplicación se gestionan en el backend, nunca en el cliente.
 - Los ficheros de configuración local con secretos (`.env`, etc.) se excluyen de Git mediante `.gitignore`.
+- Se detectan automáticamente con `gitleaks`, en `pre-commit` y en la integración continua (ver [guardarraíles](../guardrails/react.md)).
 - Si un secreto se expone por error, se revoca y se rota de inmediato. Eliminarlo del código no basta.
 
 ## Almacenamiento en el navegador

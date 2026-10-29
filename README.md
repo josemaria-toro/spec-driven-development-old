@@ -5,14 +5,14 @@ Repositorio plantilla para crear aplicaciones utilizando agentes de inteligencia
 ## Herramientas de desarrollo
 
 - **OpenSpec 1.14.3**: versión fijada del proyecto para gestionar las especificaciones de `openspec/`.
-- **Node.js**: la guía exige Node.js 22 LTS. El equipo inicial trabaja con Node.js 20.19.2, desviación aceptada hasta que se actualice el entorno.
+- **Node.js**: versión mínima exigida, la 20.
 
 ## Estructura del repositorio
 
 ```
 .
 ├── .claude/          # Comandos y skills de OpenSpec para Claude Code
-├── .github/          # Plantillas de issues y configuración de Dependabot
+├── .github/          # Plantillas de issues y PR, y configuración de Dependabot
 ├── .harness/         # Guías obligatorias para agentes y desarrolladores
 │   ├── architecture/     # Arquitectura de backend (Python) y frontend (React)
 │   ├── development/      # Git, especificaciones, despliegues y desarrollo por lenguaje

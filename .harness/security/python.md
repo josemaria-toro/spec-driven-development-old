@@ -7,6 +7,7 @@ Guía de seguridad para aplicaciones basadas en Python.
 - Ningún secreto se escribe en el código ni en ficheros versionados. Esto incluye contraseñas, claves de API, tokens y cadenas de conexión.
 - Los secretos se leen desde variables de entorno o desde un gestor de secretos.
 - Los ficheros de configuración local con secretos (`.env`, etc.) se excluyen de Git mediante `.gitignore`.
+- Se detectan automáticamente con `gitleaks`, en `pre-commit` y en la integración continua (ver [guardarraíles](../guardrails/python.md)).
 - Si un secreto se expone por error, se revoca y se rota de inmediato. Eliminarlo del código no basta.
 - Los secretos no se registran en logs, mensajes de error ni trazas.
 

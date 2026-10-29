@@ -8,7 +8,7 @@ Cualquier tecnología que no aparezca en esta lista requiere aprobación previa 
 
 | Tecnología | Uso |
 |---|---|
-| Node.js 22 LTS o superior | Entorno de ejecución y de desarrollo. |
+| Node.js 20 o superior | Entorno de ejecución y de desarrollo. |
 | TypeScript | Lenguaje base, en modo `strict`. |
 | `pnpm` | Gestión de dependencias y fichero de bloqueo. |
 | `Vite` | Herramienta de desarrollo y empaquetado. |
@@ -49,6 +49,8 @@ Cualquier tecnología que no aparezca en esta lista requiere aprobación previa 
 |---|---|
 | `pnpm audit` | Detección de vulnerabilidades en dependencias. |
 | `eslint-plugin-security` | Análisis estático de seguridad. |
+| `gitleaks` | Detección de secretos en el código y en el historial de Git. |
+| `license-checker-rseidelsohn` | Comprobación de las licencias de las dependencias. |
 | `DOMPurify` | Sanitización de HTML antes de usar `dangerouslySetInnerHTML`. |
 | Web Crypto API | Cifrado, descifrado y generación de valores aleatorios en el navegador. |
 

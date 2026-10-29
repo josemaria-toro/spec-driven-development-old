@@ -4,7 +4,7 @@ Guía para el desarrollo de aplicaciones basadas en React.
 
 ## Versión y entorno
 
-- Usar Node.js 22 LTS o superior.
+- Usar Node.js 20 o superior. La versión mínima exigida es la 20.
 - Usar TypeScript en todo el código. No se admite JavaScript sin tipar en código nuevo.
 - Gestionar las dependencias con `pnpm` y versionar el fichero de bloqueo (`pnpm-lock.yaml`) en Git.
 - Las versiones de Node y pnpm se fijan en el proyecto (`engines` en `package.json` y `.nvmrc`).
