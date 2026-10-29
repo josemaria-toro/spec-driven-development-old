@@ -15,7 +15,7 @@ Repositorio plantilla para crear aplicaciones utilizando agentes de inteligencia
 ├── .github/          # Plantillas de issues y configuración de Dependabot
 ├── .harness/         # Guías obligatorias para agentes y desarrolladores
 │   ├── architecture/     # Arquitectura de backend (Python) y frontend (React)
-│   ├── development/      # Git, especificaciones y desarrollo por lenguaje
+│   ├── development/      # Git, especificaciones, despliegues y desarrollo por lenguaje
 │   ├── documentation/    # Guía de documentación de proyectos
 │   ├── guardrails/       # Guardarraíles por lenguaje
 │   ├── licenses/         # Licencias por lenguaje
@@ -26,3 +26,12 @@ Repositorio plantilla para crear aplicaciones utilizando agentes de inteligencia
 ├── openspec/         # Especificaciones: specs/ (vigentes) y changes/ (en curso y archivados)
 └── README.md
 ```
+
+## Despliegues
+
+Al solicitar el despliegue de un proyecto se genera su versión distribuible en `releases/`, en la raíz del espacio de trabajo (se crea si no existe):
+
+- `<nombre-proyecto>.v<version>.zip`: versión distribuible del proyecto.
+- `<nombre-proyecto>.v<version>.txt`: variables de entorno y configuraciones necesarias para desplegarlo, sin valores.
+
+`releases/` no se versiona: está incluida en el `.gitignore`. El proceso completo está en [la guía de despliegues](.harness/development/deployment.md).

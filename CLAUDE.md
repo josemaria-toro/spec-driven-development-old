@@ -12,6 +12,7 @@ Antes de escribir, modificar o revisar código, lee las guías correspondientes 
 - Arquitectura de backend: `.harness/architecture/python.md`. Los proyectos de backend siguen DDD como enfoque de diseño, implementado con arquitectura hexagonal y Clean Architecture.
 - Arquitectura de frontend: `.harness/architecture/react.md`. Los proyectos de frontend se organizan por funcionalidad.
 - Ramas, commits y PR: `.harness/development/git.md`.
+- Despliegues: `.harness/development/deployment.md`.
 - Especificaciones: `.harness/development/specifications.md`.
 - Licencias: `.harness/licenses/`.
 
@@ -27,6 +28,7 @@ Si una tecnología no aparece en la guía de tecnologías admitidas, no la uses.
 - **Arquitectura de backend**: los proyectos de backend siguen DDD y aplican la arquitectura hexagonal con Clean Architecture, con las capas y la regla de dependencias de `.harness/architecture/python.md`. Al crear una entidad del dominio, crea en el mismo cambio su contrato de repositorio, su modelo de persistencia, su repositorio de SQLAlchemy y su mapper, con sus pruebas.
 - **Especificaciones**: las funcionalidades nuevas y los cambios de comportamiento se especifican con OpenSpec antes de implementarlos. Las especificaciones viven en `openspec/` de cada proyecto. Cada especificación sigue obligatoriamente el flujo de OpenSpec, en orden y sin omitir fases: `propose` (`/opsx:propose`), `apply` (`/opsx:apply`) y `archive` (`/opsx:archive`), como indica `.harness/development/specifications.md`. Al implementar un cambio, sigue sus `tasks.md` y comprueba que cada escenario tiene su prueba. Archiva el cambio en la rama de trabajo antes del merge.
 - **Documentación**: los cambios que afecten a un proyecto deben actualizar su documentación en el mismo PR.
+- **Despliegues**: cuando se solicite desplegar un proyecto, genera su versión distribuible, comprímela como `<nombre-proyecto>.v<version>.zip` en `releases/` (en la raíz del espacio de trabajo; créala si no existe) y crea junto a ella un `.txt` equivalente con las variables de entorno y configuraciones necesarias, sin valores. `releases/` no se versiona y está en el `.gitignore`. Sigue `.harness/development/deployment.md`.
 - **Secretos**: nunca escribas contraseñas, claves, tokens ni otra información sensible en el código, en la documentación ni en los ejemplos.
 
 ## Git

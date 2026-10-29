@@ -18,6 +18,8 @@
 mono_crash.*
 
 # Build results
+# Versiones distribuibles generadas al desplegar (ver .harness/development/deployment.md)
+/releases/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
