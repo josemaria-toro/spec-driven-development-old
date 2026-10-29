@@ -17,7 +17,7 @@ Guía para la documentación de proyectos.
   4. **Ejecución**: comandos para arrancar la aplicación en local.
   5. **Pruebas**: comandos para ejecutar las pruebas unitarias, de integración y end-to-end, y la cobertura.
   6. **Configuración**: variables de entorno y ficheros de configuración, con su finalidad. Nunca se incluyen valores reales de secretos.
-  7. **Despliegue**: cómo se publica la aplicación, si aplica.
+  7. **Despliegue**: cómo se publica la aplicación, si aplica, según [la guía de despliegues](../development/deployment.md).
   8. **Contribución**: referencia a la guía de estrategia de ramas (`.harness/development/git.md`) y a los guardarraíles (`.harness/guardrails/`).
   9. **Licencia**: licencia aprobada del proyecto, con referencia al fichero `LICENSE`.
 - Los comandos del `README.md` se han probado y funcionan tal como están escritos.
